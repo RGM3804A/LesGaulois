@@ -28,21 +28,27 @@ public class Romain {
 	}
 
 	public void recevoirCoup(int forceCoup) {
+		assert force>0;
 		force -= forceCoup;
 		if (force > 0) {
 			parler("Aïe");
 		} else {
 			parler("J'abandonne...");
 		}
+		assert force == (force - forceCoup);
 	}
 	
+	public Equipement[] sEquiper(Equipement[]) {
+		
+	}
 	
-	public void main() {
+	public static void main(String[] args) {
 		int forceCoup = 5;
-		Romain minus = new Romain("Minus",-6);
-		prendreParole();
+		Romain minus = new Romain("Minus",6);
+		minus.prendreParole();
 		minus.parler("est-ce que moi aussi ?");
-		recevoirCoup(forceCoup);
+		assert minus.force>0;
+		minus.recevoirCoup(forceCoup);
 	}
 }
 
