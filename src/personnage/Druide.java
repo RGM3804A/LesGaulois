@@ -35,18 +35,18 @@ public class Druide {
 			parler("J'ai prepare une super potion de force : " + forcePotion );
 		}
 		else {
-			parler("Je n'ai pas trouve tous les ingrédients, ma potion est seulement de force : " + random);
+			parler("Je n'ai pas trouve tous les ingrédients, ma potion est seulement de force : " + forcePotion);
 		}
 		return forcePotion;
 	}
 	
 	public void booster(Gaulois gaulois) {
 		int forcePotion = preparerPotion();
-		if(gaulois.getNom() != "Obelix") {
-			gaulois.boirePotion(forcePotion);
+		if(gaulois.getNom() == "Obelix") {
+			System.out.println("Non, Obélix !... Tu n’auras pas de potion magique !");
 		}
 		else {
-			System.out.println("Non, Obélix !... Tu n’auras pas de potion magique !");
+			gaulois.boirePotion(forcePotion);
 		}
 	}
 	
